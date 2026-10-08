@@ -1,5 +1,6 @@
 import { Geist, Geist_Mono, Inter } from "next/font/google"
 
+import type { Metadata } from "next";
 import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
 import { cn } from "@/lib/utils";
@@ -10,6 +11,11 @@ const fontMono = Geist_Mono({
   subsets: ["latin"],
   variable: "--font-mono",
 })
+
+export const metadata: Metadata = {
+  title: "Power Connect",
+  description: "Rent Nest",
+};
 
 export default function RootLayout({
   children,
