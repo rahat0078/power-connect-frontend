@@ -21,49 +21,48 @@ import { PublicNavbar } from "@/components/home/public-navbar"
 import { getPublicServices } from "./_actions/services"
 import { getRecentSchedules } from "./_actions/schedules"
 
-
 const fallbackServices = [
   {
     id: "1",
     name: "Residential Power Installation",
     description:
       "Certified electrical setup and connection services for residential properties.",
-      price: "5000"
+    price: "5000",
   },
   {
     id: "2",
     name: "Emergency Outage Repair",
     description:
       "Fast-response electrical troubleshooting and emergency repair services.",
-      price: "5500"
+    price: "5500",
   },
   {
     id: "3",
     name: "Transformer & Line Maintenance",
     description:
       "Scheduled safety inspections and heavy power grid maintenance.",
-       price: "3000"
+    price: "3000",
   },
   {
     id: "4",
     name: "Solar & Backup Power Solutions",
     description:
       "Inverter, solar panel, and generator setup for uninterruptible power supply.",
-       price: "5400"
+    price: "5400",
   },
   {
     id: "5",
     name: "Industrial Connection Services",
     description:
       "High-voltage grid connection and commercial load utility support.",
-       price: "8500"
+    price: "8500",
   },
   {
     id: "6",
     name: "Substation & Safety Audits",
     description:
       "Comprehensive power safety, ground checks, and compliance reporting.",
-       price: "9550"
+    price: "9550",
   },
 ]
 
