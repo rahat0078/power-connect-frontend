@@ -20,6 +20,7 @@ import {
 import { PublicNavbar } from "@/components/home/public-navbar"
 import { getPublicServices } from "./_actions/services"
 import { getRecentSchedules } from "./_actions/schedules"
+import { getMe } from "./_actions/getMe"
 
 const fallbackServices = [
   {
@@ -90,6 +91,7 @@ function SectionHeading({
 
 export default async function HomePage() {
   const apiServices = await getPublicServices({ limit: 6 })
+  const getUser = await getMe()
 
   const servicesList =
     apiServices.data.length > 0 ? apiServices.data : fallbackServices
@@ -100,7 +102,7 @@ export default async function HomePage() {
 
   return (
     <div id="top" className="min-h-screen bg-background">
-      <PublicNavbar />
+      <PublicNavbar user={getUser} />{" "}
       <main>
         {/* HERO SECTION */}
         <section className="relative overflow-hidden border-b border-border/70 bg-muted/30">
@@ -121,7 +123,7 @@ export default async function HomePage() {
               </p>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                 <Link
-                  href="/register"
+                  href="/login"
                   className="inline-flex items-center justify-center gap-2 rounded-md bg-primary px-5 py-3 text-sm font-medium text-primary-foreground shadow-sm hover:bg-primary/90"
                 >
                   Get Started <ArrowRight className="size-4" />
@@ -412,7 +414,6 @@ export default async function HomePage() {
           </div>
         </section>
       </main>
-
       {/* FOOTER */}
       <footer className="border-t border-border bg-muted/30 px-4 py-12 sm:px-6 lg:px-8">
         <div className="mx-auto grid max-w-7xl gap-10 sm:grid-cols-2 lg:grid-cols-4">
