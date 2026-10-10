@@ -129,7 +129,7 @@ export default async function HomePage() {
                   Get Started <ArrowRight className="size-4" />
                 </Link>
                 <Link
-                  href="#schedules"
+                  href="/schedules"
                   className="inline-flex items-center justify-center gap-2 rounded-md border border-border bg-background px-5 py-3 text-sm font-medium hover:bg-muted"
                 >
                   <Calendar className="size-4 text-blue-600" /> View Outage

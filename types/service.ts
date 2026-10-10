@@ -26,3 +26,18 @@ export interface ServiceQueryParams {
   page?: number
   limit?: number
 }
+
+export interface ServiceMeta {
+  page: number;
+  limit: number;
+  total: number;
+  totalPages: number;
+}
+
+export interface PublicServicesResponse {
+  success: boolean;
+  statusCode: number;
+  message: string;
+  data: PowerService[];
+  meta: ServiceMeta;
+}

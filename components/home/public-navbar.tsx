@@ -40,11 +40,10 @@ export function PublicNavbar({ user }: { user: TGetMeResponse | null }) {
   }
 
   const links = [
-    ["Home", "#top"],
-    ["Services", "#services"],
-    ["How It Works", "#how-it-works"],
-    ["Providers", "#providers"],
-    ["About", "#about"],
+    ["Home", "/"],
+    ["Outage Schedule", "/schedules"],
+    ["Services", "/services"],
+    ["How It Works", "/how-it-works"]
   ]
 
   return (

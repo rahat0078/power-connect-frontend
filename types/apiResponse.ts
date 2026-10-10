@@ -4,9 +4,9 @@ export interface TApiResponse<T> {
   message: string
   data: T
   meta?: {
-    page: number
-    limit: number
-    total: number
-    totalPages: number
+    page?: number
+    limit?: number
+    total?: number
+    totalPages?: number
   }
 }
