@@ -23,7 +23,6 @@ const navigation: Record<UserRole, NavItem[]> = {
     { label: "Dashboard", href: "/admin", icon: LayoutDashboard },
     { label: "Users", href: "/admin/users", icon: Users },
     { label: "Providers", href: "/admin/providers", icon: ShieldCheck },
-    { label: "Service Requests", href: "/admin/requests", icon: ClipboardList },
     { label: "Outage Reports", href: "/admin/outage-reports", icon: Activity },
     { label: "Schedules", href: "/admin/schedules", icon: FileClock },
     { label: "Audit Logs", href: "/admin/audit-logs", icon: History },
@@ -64,7 +63,7 @@ function Nav({ role }: { role: UserRole }) {
           href={href}
           className={`flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium transition-colors ${i === 0 ? "bg-blue-50 text-blue-700" : "text-slate-600 hover:bg-slate-50 hover:text-slate-950"}`}
         >
-          <Icon className="size-[18px]" />
+          <Icon className="size-4.5" />
           {label}
         </Link>
       ))}

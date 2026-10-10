@@ -158,7 +158,7 @@ export default function AdminProvidersClient({
               <div className="flex shrink-0 justify-end gap-3 border-t border-slate-100 pt-4 md:flex-col md:border-t-0 md:border-l md:pt-0 md:pl-6">
                 <Button
                   size="sm"
-                  className="min-w-[120px] bg-emerald-600 text-white hover:bg-emerald-700"
+                  className="min-w-30 bg-emerald-600 text-white hover:bg-emerald-700"
                   disabled={updatingId === item.id}
                   onClick={() => handleApprovalAction(item.id, true)}
                 >
@@ -174,7 +174,7 @@ export default function AdminProvidersClient({
                 <Button
                   size="sm"
                   variant="destructive"
-                  className="min-w-[120px]"
+                  className="min-w-30"
                   disabled={updatingId === item.id}
                   onClick={() => handleApprovalAction(item.id, false)}
                 >
