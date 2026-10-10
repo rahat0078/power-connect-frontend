@@ -2,6 +2,7 @@
 import { cookies } from "next/headers"
 import { fetcher } from "@/lib/fetcher"
 import ResidentDashboardClient from "./resident-dashboard-client"
+import BecomeProviderBanner from "./become-provider-banner"
 
 async function getDashboardStats() {
   try {
@@ -48,5 +49,12 @@ async function getDashboardStats() {
 export default async function ResidentPage() {
   const stats = await getDashboardStats()
 
-  return <ResidentDashboardClient stats={stats} />
+  return (
+    <div className="mx-auto max-w-6xl space-y-8 pb-12">
+      <BecomeProviderBanner />
+      <div>
+        <ResidentDashboardClient stats={stats} />
+      </div>
+    </div>
+  )
 }
