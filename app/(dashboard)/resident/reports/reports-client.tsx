@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { useForm } from "react-hook-form"
+import { SubmitHandler, useForm } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { toast } from "sonner"
 import { AlertTriangle, Clock, Loader2, MapPin, PlusCircle } from "lucide-react"
@@ -11,12 +11,16 @@ import {
   type OutageFormValues,
 } from "@/schemas/outage.schema"
 
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { Textarea } from "@/components/ui/textarea"
+import { Button } from "@/ui/button"
+import { Input } from "@/ui/input"
+import { Label } from "@/ui/label"
+import { Textarea } from "@/ui/textarea"
 import type { TGetMeResponse } from "@/components/home/public-navbar"
-import { createOutageReport, getMyOutageReports, OutageReport } from "../_actions/outage"
+import {
+  createOutageReport,
+  getMyOutageReports,
+  OutageReport,
+} from "../_actions/outage"
 
 interface ResidentReportsClientProps {
   user: TGetMeResponse | null
@@ -48,7 +52,7 @@ export default function ResidentReportsClient({
     try {
       const res = await getMyOutageReports()
       setReports(res.data || [])
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
     } catch (error: any) {
       toast.error(error.message || "Failed to refresh reports.")
     } finally {
@@ -56,15 +60,22 @@ export default function ResidentReportsClient({
     }
   }
 
-  const onSubmit = async (data: OutageFormValues) => {
+  const onSubmit: SubmitHandler<OutageFormValues> = async (
+    data: OutageFormValues
+  ) => {
     setIsLoading(true)
-    
+
     try {
-      const res = await createOutageReport(data)
+      const payload: { area: string; description: string } = {
+        area: data.area ?? "",
+        description: data.description ?? "",
+      }
+
+      const res = await createOutageReport(payload)
       toast.success(res.message || "Outage report submitted successfully!")
       reset()
       await refreshReports()
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
     } catch (error: any) {
       toast.error(error.message || "Failed to submit outage report.")
     } finally {

@@ -14,16 +14,16 @@ import type { TGetMeResponse } from "@/components/home/public-navbar"
 import { TApiResponse } from "@/types/apiResponse"
 
 
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
+import { Button } from "@/ui/button"
+import { Input } from "@/ui/input"
+import { Label } from "@/ui/label"
 import {
   Dialog,
   DialogContent,
   DialogDescription,
   DialogHeader,
   DialogTitle,
-} from "@/components/ui/dialog"
+} from "@/ui/dialog"
 import { CreateServiceRequestInput, createServiceRequestZodSchema } from "@/schemas/serviceRequest"
 import { createServiceRequest } from "@/app/(dashboard)/resident/_actions/createRequest"
 

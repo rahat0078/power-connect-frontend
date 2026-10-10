@@ -20,8 +20,8 @@ import {
   AlertTriangle,
 } from "lucide-react"
 import { PublicNavbar, type TGetMeResponse } from "@/components/home/public-navbar"
-import { Card, CardContent } from "@/components/ui/card"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import { Card, CardContent } from "@/ui/card"
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/ui/tabs"
 
 interface HowItWorksClientProps {
   user: TGetMeResponse | null
@@ -106,7 +106,7 @@ const workflows = {
       ],
     ],
   },
-} as const
+} 
 
 export default function HowItWorksClient({ user }: HowItWorksClientProps) {
   const [role, setRole] = useState<keyof typeof workflows>("residents")
@@ -159,8 +159,8 @@ export default function HowItWorksClient({ user }: HowItWorksClientProps) {
                     </div>
 
                     <div className="grid gap-4 md:grid-cols-4">
-                      {flow.steps.map(([Icon, title, text], index) => (
-                        <Card key={title} className="relative">
+                      {flow?.steps?.map(([Icon, title, text], index) => (
+                        <Card key={title as string} className="relative">
                           <CardContent className="p-5">
                             <div className="flex items-center justify-between">
                               <span className="text-xs font-semibold text-blue-600">
@@ -168,9 +168,9 @@ export default function HowItWorksClient({ user }: HowItWorksClientProps) {
                               </span>
                               <Icon className="size-5 text-blue-600" />
                             </div>
-                            <h3 className="mt-6 font-semibold">{title}</h3>
+                            <h3 className="mt-6 font-semibold">{title as string}</h3>
                             <p className="mt-2 text-sm leading-6 text-muted-foreground">
-                              {text}
+                              {text as string}
                             </p>
                           </CardContent>
                         </Card>

@@ -12,7 +12,7 @@ import {
   ShieldAlert,
 } from "lucide-react"
 
-import { Button } from "@/components/ui/button"
+import { Button } from "@/ui/button"
 import type { TGetMeResponse } from "@/components/home/public-navbar"
 import {
   getAllPlatformOutageReports,

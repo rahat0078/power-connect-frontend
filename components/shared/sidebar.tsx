@@ -10,7 +10,6 @@ import {
   Receipt,
   Settings,
   ShieldCheck,
-  Users,
   Wrench,
   Zap,
   type LucideIcon,
@@ -21,7 +20,6 @@ type NavItem = { label: string; href: string; icon: LucideIcon }
 const navigation: Record<UserRole, NavItem[]> = {
   ADMIN: [
     { label: "Dashboard", href: "/admin", icon: LayoutDashboard },
-    { label: "Users", href: "/admin/users", icon: Users },
     { label: "Providers", href: "/admin/providers", icon: ShieldCheck },
     { label: "Outage Reports", href: "/admin/outage-reports", icon: Activity },
     { label: "Schedules", href: "/admin/schedules", icon: FileClock },

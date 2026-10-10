@@ -13,7 +13,7 @@ import {
 } from "lucide-react"
 import { toast } from "sonner"
 
-import { Button } from "@/components/ui/button"
+import { Button } from "@/ui/button"
 import type { ServiceRequest } from "./page"
 import { createCheckoutSession } from "../_actions/payment"
 

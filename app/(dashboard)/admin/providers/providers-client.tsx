@@ -19,7 +19,7 @@ import {
 } from "lucide-react"
 
 
-import { Button } from "@/components/ui/button"
+import { Button } from "@/ui/button"
 import type { TGetMeResponse } from "@/components/home/public-navbar"
 import { approveProviderProfile, getPendingProviders, IPendingProvider, rejectProviderProfile } from "../_actions/admin-provider-approval"
 

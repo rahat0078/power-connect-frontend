@@ -21,10 +21,9 @@ import {
   createScheduleZodSchema,
   type CreateScheduleFormValues,
 } from "@/schemas/schedule.schema"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
-import { Label } from "@/components/ui/label"
+import { Button } from "@/ui/button"
+import { Input } from "@/ui/input"
+import { Label } from "@/ui/label"
 import type { TGetMeResponse } from "@/components/home/public-navbar"
 import {
   createPowerSchedule,
@@ -33,6 +32,7 @@ import {
   IPowerSchedule,
   updatePowerSchedule,
 } from "../_actions/admin-schedule"
+import { Textarea } from "@/ui/textarea"
 
 interface AdminSchedulesClientProps {
   user: TGetMeResponse | null

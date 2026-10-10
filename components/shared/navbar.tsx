@@ -16,7 +16,7 @@ export function Navbar({ role, title }: { role: UserRole; title: string }) {
       </div>
       <div className="flex items-center gap-2">
         <Button variant="ghost" size="icon" aria-label="Notifications">
-          <Bell className="size-[18px]" />
+          <Bell className="size-4.5" />
         </Button>
         <UserNav />
       </div>

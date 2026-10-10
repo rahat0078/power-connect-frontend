@@ -9,9 +9,9 @@ import { toast } from "sonner"
 import { Loader2 } from "lucide-react"
 
 import { fetcher } from "@/lib/fetcher"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
+import { Button } from "@/ui/button"
+import { Input } from "@/ui/input"
+import { Label } from "@/ui/label"
 import { RegisterFormValues, RegistrationZodSchema, VerificationFormValues, VerificationZodSchema } from "@/schemas/auth.schema"
 
 
