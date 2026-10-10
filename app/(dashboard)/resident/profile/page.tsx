@@ -1,5 +1,5 @@
 
-import { User, Mail, Shield, Calendar, Phone, MapPin } from "lucide-react"
+import { User, Mail, Shield, Calendar, } from "lucide-react"
 import { getMe } from "@/app/(public)/_actions/getMe"
 
 

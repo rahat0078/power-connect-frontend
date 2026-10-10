@@ -68,7 +68,7 @@ export default function PaymentsClientPage({ initialPayments }: PaymentsClientPa
                 <div className="text-xs text-slate-500 flex items-center gap-1.5 font-mono bg-slate-100/70 p-2 rounded w-fit">
                   <Hash className="size-3.5 text-slate-400" />
                   <span className="text-slate-400">TxID:</span>
-                  <span className="text-slate-700 truncate max-w-[300px] md:max-w-[450px]">
+                  <span className="text-slate-700 truncate max-w-75 md:max-w-112.5">
                     {item.transactionId}
                   </span>
                 </div>

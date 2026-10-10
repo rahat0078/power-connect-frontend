@@ -272,7 +272,7 @@ export default function ServicesClient({
 
       {/* Service Request Dialog Modal */}
       <Dialog open={isModalOpen} onOpenChange={setIsModalOpen}>
-        <DialogContent className="sm:max-w-[425px]">
+        <DialogContent className="sm:max-w-106.25">
           <DialogHeader>
             <DialogTitle>Request {selectedService?.name}</DialogTitle>
             <DialogDescription>
