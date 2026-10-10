@@ -22,7 +22,7 @@ const navigation: Record<UserRole, NavItem[]> = {
     { label: "Users", href: "/admin/users", icon: Users },
     { label: "Providers", href: "/admin/providers", icon: ShieldCheck },
     { label: "Service Requests", href: "/admin/requests", icon: ClipboardList },
-    { label: "Outage Reports", href: "/admin/outages", icon: Activity },
+    { label: "Outage Reports", href: "/admin/outage-reports", icon: Activity },
     { label: "Schedules", href: "/admin/schedules", icon: FileClock },
     { label: "Audit Logs", href: "/admin/audit-logs", icon: History },
   ],
