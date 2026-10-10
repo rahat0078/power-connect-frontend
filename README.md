@@ -6,10 +6,10 @@
 
 ## 🚀 Live Links & Resources
 
-* **Live Frontend Web App:** [https://powerconnect.vercel.app](https://powerconnect.vercel.app) *(Replace with actual URL)*
-* **Backend API Base URL:** `https://your-backend-api.com/api/v1`
-* **API Documentation:** `https://your-backend-api.com/docs`
-* **Demo Video Walkthrough:** [Watch Video Demonstration](https://drive.google.com/file/d/xyz/view)
+* **Live Frontend Web App:** [https://power-connect-nu.vercel.app](https://power-connect-nu.vercel.app)
+* **Backend API Base URL:** `https://power-connect-backend.vercel.app/api/v1`
+* **API Documentation:** `https://drive.google.com/file/d/1stVCe0GJK_kKwo4k6S2fiQPjRAZeRrnr/view?usp=sharing`
+
 
 ---
 
