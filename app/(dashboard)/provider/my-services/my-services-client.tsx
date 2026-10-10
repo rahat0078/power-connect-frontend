@@ -2,7 +2,6 @@
 "use client"
 
 import { useState } from "react"
-import { useRouter } from "next/navigation"
 import { toast } from "sonner"
 import {
   Plus,
@@ -38,7 +37,6 @@ interface MyServicesClientProps {
 export default function MyServicesClient({
   initialServices,
 }: MyServicesClientProps) {
-  const router = useRouter()
   const [services, setServices] = useState<IPowerService[]>(initialServices)
   const [isLoading, setIsLoading] = useState(false)
   const [actionId, setActionId] = useState<string | null>(null)
