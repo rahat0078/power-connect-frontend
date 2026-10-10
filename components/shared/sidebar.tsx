@@ -4,6 +4,7 @@ import {
   ClipboardList,
   FileClock,
   History,
+  Home,
   LayoutDashboard,
   Pen,
   Receipt,
@@ -26,6 +27,8 @@ const navigation: Record<UserRole, NavItem[]> = {
     { label: "Outage Reports", href: "/admin/outage-reports", icon: Activity },
     { label: "Schedules", href: "/admin/schedules", icon: FileClock },
     { label: "Audit Logs", href: "/admin/audit-logs", icon: History },
+    { label: "Back home", href: "/", icon: Home },
+
   ],
   PROVIDER: [
     { label: "Dashboard", href: "/provider", icon: LayoutDashboard },
@@ -37,6 +40,7 @@ const navigation: Record<UserRole, NavItem[]> = {
     { label: "Create Service", href: "/provider/create-service", icon: Pen },
     { label: "My Services", href: "/provider/my-services", icon: Wrench },
     { label: "Profile", href: "/provider/profile", icon: Settings },
+    { label: "Back home", href: "/", icon: Home },
   ],
   RESIDENT: [
     { label: "Dashboard", href: "/resident", icon: LayoutDashboard },
@@ -48,6 +52,7 @@ const navigation: Record<UserRole, NavItem[]> = {
     { label: "Outage Reports", href: "/resident/reports", icon: Activity },
     { label: "Payments", href: "/resident/payments", icon: Receipt },
     { label: "Profile", href: "/resident/profile", icon: Settings },
+    { label: "Back home", href: "/", icon: Home },
   ],
 }
 function Nav({ role }: { role: UserRole }) {
