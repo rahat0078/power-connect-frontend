@@ -38,8 +38,7 @@ const navigation: Record<UserRole, NavItem[]> = {
   ],
   RESIDENT: [
     { label: "Dashboard", href: "/resident", icon: LayoutDashboard },
-    { label: "Services", href: "/resident/services", icon: Zap },
-    { label: "My Requests", href: "/resident/requests", icon: ClipboardList },
+    { label: "My Service Requests", href: "/resident/requests", icon: ClipboardList },
     { label: "Outage Reports", href: "/resident/reports", icon: Activity },
     { label: "Payments", href: "/resident/payments", icon: Receipt },
     { label: "Profile", href: "/resident/profile", icon: Settings },

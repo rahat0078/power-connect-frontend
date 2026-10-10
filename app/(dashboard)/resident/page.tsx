@@ -1,24 +1,52 @@
-import { PageHeader } from "@/components/shared/page-header"
-export default function ResidentPage() {
-  return (
-    <>
-      <PageHeader
-        title="Resident Dashboard"
-        description="Access utility services, requests, outages, and payments in one place."
-      />
-      <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
-        {[
-          "Available Services",
-          "My Requests",
-          "Outage Reports",
-          "Payments",
-        ].map((label) => (
-          <div key={label} className="h-32 rounded-xl border bg-white p-5">
-            <p className="text-sm font-medium text-slate-500">{label}</p>
-            <div className="mt-5 h-6 w-16 rounded bg-slate-100" />
-          </div>
-        ))}
-      </div>
-    </>
-  )
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import { cookies } from "next/headers"
+import { fetcher } from "@/lib/fetcher"
+import ResidentDashboardClient from "./resident-dashboard-client"
+
+async function getDashboardStats() {
+  try {
+    const cookieStore = await cookies()
+    const cookieString = cookieStore.toString()
+
+    const [requestsRes, outagesRes, paymentsRes] = await Promise.all([
+      fetcher<any[]>("/service-requests/my-requests", {
+        headers: { Cookie: cookieString },
+        cache: "no-store",
+      }),
+      fetcher<any[]>("/outage-reports/my-reports", {
+        headers: { Cookie: cookieString },
+        cache: "no-store",
+      }),
+      fetcher<any[]>("/payments/my-history", {
+        headers: { Cookie: cookieString },
+        cache: "no-store",
+      }),
+    ])
+
+    const requests = requestsRes.data || []
+    const outages = outagesRes.data || []
+    const payments = paymentsRes.data || []
+
+    return {
+      totalRequests: requests.length,
+      pendingRequests: requests.filter((r) => r.status === "PENDING").length,
+      acceptedRequests: requests.filter((r) => r.status === "ACCEPTED").length,
+      totalOutages: outages.length,
+      totalPayments: payments.length,
+    }
+  } catch {
+    return {
+      totalRequests: 0,
+      pendingRequests: 0,
+      acceptedRequests: 0,
+      totalOutages: 0,
+      totalPayments: 0,
+    }
+  }
+}
+
+export default async function ResidentPage() {
+  const stats = await getDashboardStats()
+
+  return <ResidentDashboardClient stats={stats} />
 }
