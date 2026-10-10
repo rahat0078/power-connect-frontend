@@ -2,6 +2,7 @@ import { TApiResponse } from "@/types/apiResponse";
 
 type FetchOptions = RequestInit & {
   next?: NextFetchRequestConfig;
+  headers?: Record<string, string>;
 };
 
 export const fetcher = async <T>(
