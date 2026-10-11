@@ -9,7 +9,7 @@
 * **Live Frontend Web App:** [https://power-connect-nu.vercel.app](https://power-connect-nu.vercel.app)
 * **Backend API Base URL:** `https://power-connect-backend.vercel.app/api/v1`
 * **API Documentation:** `https://drive.google.com/file/d/1stVCe0GJK_kKwo4k6S2fiQPjRAZeRrnr/view?usp=sharing`
-
+* **Video Explaination:** `https://drive.google.com/file/d/1xjc5XT3W9E3xoHc2SnBrRu6_PmPz1oYx/view?usp=sharing`
 
 ---
 
